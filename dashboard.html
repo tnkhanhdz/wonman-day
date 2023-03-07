@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Happy Women’s day</title>
     <!--    <meta name="viewport" content="width=device-width,initial-scale=1">-->
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no">
     <link rel="stylesheet" href="./css/dashboard.css">
@@ -49,21 +49,81 @@
 </div>
 </body>
 <script>
-    $(document).ready(function() {
-        let wishesData = [];
-        for (let i = 0; i < 20; i++) {
-            wishesData.push({
-                image: 'https://dummyimage.com/600x400/000/fff',
-                name: 'Trần Văn A',
-                wishes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
-            })
-        }
+    $(document).ready(function () {
+        let wishesData = [
+            {
+                image: 'https://lh6.googleusercontent.com/_C61KQalgV0w6TPutQf_bPgKWl5GXVD7uDSRLOi0BG_awzDnHVQsg4AKSOK_G_JD4sc=w2400',
+                name: 'Hoàng Trung',
+                wishes: 'Dạo này anh thấy nhiều đinh tặc quá, hai đứa mình mỗi người một cái chổi mình "qwét-ding" đi :))'
+            }, {
+                image: 'https://lh6.googleusercontent.com/c3f43ZjDfipBEzZld1SnHzYXjx0mK-B5ehlzgNqyTDrd3YdVOOi45SbkfH5lzatM-Qw=w2400',
+                name: 'Trần Tùng Lâm',
+                wishes: 'To: Cao Thị Khánh Linh<br>Chúc chị có một ngày 8/3 vui vẻ và hạnh phúc nhé ạ'
+            }, {
+                image: 'https://lh6.googleusercontent.com/R-mQtgXUy4-OMdUuddPmPz-3EqBB8s8E9ssqZnlCK-LuJEZHeJ90RvM60w5VKj8DsSs=w2400',
+                name: 'Nam Hải',
+                wishes: 'Chúc các chị nhanh có chồng'
+            }, {
+                image: 'https://lh5.googleusercontent.com/GNmbCy8XkmqR8znXKiE4gZUSQfjRalVUAUmH5RjOGm0p_M8lCYASnsXNmsFgsfRUnX8=w2400',
+                name: 'Bùi Khắc Tùng',
+                wishes: 'Chúc chị em hay ăn chóng lớn, luôn vui vẻ và chóng chống lầy'
+            }, {
+                image: 'https://lh5.googleusercontent.com/OL7eVFtCdnToGyI8xgrv4Jrif4iHjrZvAFVkz6xxBuWDpS5oxfNjOZcEnIxkOVLXMKs=w2400',
+                name: 'Bạn Quân giấu tên',
+                wishes: 'Chúc chị em ngày nào cũng là 8/3, có nhiều niềm vui mới, nhiều hoa, nhiều quà, và xinh như bức ảnh của emmmmmm'
+            }, {
+                image: 'https://lh3.googleusercontent.com/6ALMU5UQiRQejXIZ_gkCLH01I8LB3Fv_koWIxdAvTSAINaZYHWWtlP869FxA3NDIjXw=w2400',
+                name: 'Nguyễn Đức Việt',
+                wishes: 'Chúc toàn thể chị em có 1 ngày 8-3 vui vẻ, hạnh phúc bên gia đình và người thân !'
+            }, {
+                image: 'https://i.kym-cdn.com/entries/icons/original/000/021/807/ig9OoyenpxqdCQyABmOQBZDI0duHk2QZZmWg2Hxd4ro.jpg',
+                name: 'Đông Tà',
+                wishes: 'To: Người tên Linh<br>Nhân dịp kỷ niệm Ngày Quốc tế Phụ nữ 8-3, tôi xin gửi lời chúc mừng đến bạn. Hãy để ngày hôm nay là một ngày đặc biệt để tôn vinh và ghi nhận những đóng góp to lớn của phụ nữ trong cuộc sống và xã hội. Cảm ơn bạn vì những nỗ lực và đóng góp của mình trong cuộc sống và công việc.<br>Tôi chúc bạn luôn vui vẻ, xinh đẹp và luôn có sức khỏe để đạt được mọi mục tiêu mà mình đề ra. Hãy tiếp tục phấn đấu và trở thành người phụ nữ mạnh mẽ và thành công nhé!'
+            }, {
+                image: 'https://lh6.googleusercontent.com/cQbVYU3VuXI-GM6Y4XrHssIqUgFdcoI_NLAoENRRZUmmhgqbuo60KdRjfzMDtXIbQtA=w2400',
+                name: 'Design official',
+                wishes: 'Hôm nayyy 8/3 , chúc cho các chị có chồng, có người yêu sẽ được chồng/người yêu quan tâm, tặng quà, còn chúc cho chị em đang FA (Ví dụ dấu tên: Ngô Ánh) sẽ tìm thấy một nửa hạnh phúc của đời mình. Happy Women’s Day!'
+            }, {
+                image: 'https://lh3.googleusercontent.com/Voz7D2nBxRZ7OKn2Y69xtdo_mqPMVoEsKh2bQWjaq0ZPPPYLqWKfmDDEhcEU_da7E6I=w2400',
+                name: 'Trần Ngọc Khanh',
+                wishes: 'Chúc chị em ăn hoài không béo'
+            }, {
+                image: 'https://lh5.googleusercontent.com/03yJa9DjXcKTgRT6e7XO831vlxLp51nxaiinom6PBVflNfUdt00OPfPVTC64XDH7Zxo=w2400',
+                name: 'Lực Aitryy',
+                wishes: 'Cảm ơn một nửa thế giới, cảm ơn vì là động lực cho anh em mỗi ngày đi làm, cảm ơn các chị em vì luôn là những bông hoa xinh xắn, tiếp năng lượng cho anh em có động lực cố gắng hết mình trong công việc và cuộc sống'
+            }, {
+                image: 'https://i.kym-cdn.com/entries/icons/original/000/021/807/ig9OoyenpxqdCQyABmOQBZDI0duHk2QZZmWg2Hxd4ro.jpg',
+                name: 'Đạt',
+                wishes: 'Chúc các chị em luôn khỏe mạnh, vui vẻ và hạnh phúc trong cuộc sống và công việc.'
+            }, {
+                image: 'https://lh5.googleusercontent.com/CDpTbSvg-Cglfdp5SqQE-kH-c3liYPHEQSVFZccBDkH7Yd6mkOPFrCTrPUU72zpeCP8=w2400',
+                name: 'Kim Hùng',
+                wishes: 'To: Ngô Ếnh<br>Chúc bạn thân ngày mồng 8 tháng 3 vui vẻ, luôn xinh và chóng hết ế'
+            }, {
+                image: 'https://lh6.googleusercontent.com/cdaSCODPWl8GJxyK796pJevEaJh_IGJK2QvLjtvAcq4lyTzzxZ8_6gRmtgSZX6NvdiY=w2400',
+                name: 'Vinh Trần',
+                wishes: 'Chúc chị em có một ngày 8/3 thật nhiều hoa, nhiều quà, chúc chị em luôn nở nụ cười xinh như hoa'
+            }, {
+                image: 'https://lh5.googleusercontent.com/ktVuKa1DHJBIMnV2rO1A6tXejdKWJK1qJH-mrFSYZO181vStUg2zMWPXk3N2WgGjFoA=w2400',
+                name: 'Tiến Đạt',
+                wishes: 'Cảm ơn chị em vì luôn là một nửa thế giới của anh em. Chúc chị em 8/3 luôn vui vẻ, có nhiều hoa nhiều quà'
+            }, {
+                image: 'https://lh4.googleusercontent.com/6xTNMYiWn8ieoOq_fsqebyLtQ1GIANQ5DcXJdkJ-sBzr8hT8V_WShMzq8xhteUMvgWQ=w2400',
+                name: 'Duy Minh',
+                wishes: 'Nhân ngày 8/3, chúc chị em DJ2 sức khỏe dồi dào, luôn vui vẻ, hạnh phúc, có nhiều hoa nhiều tiền nhiều người iêu.'
+            }, {
+                image: 'https://i.kym-cdn.com/entries/icons/original/000/021/807/ig9OoyenpxqdCQyABmOQBZDI0duHk2QZZmWg2Hxd4ro.jpg',
+                name: 'Ông này không ghi tên',
+                wishes: 'Biết là anh đã già, đôi khi lại rất khó ưa, chỉ lỡ yêu em quá đà, em nghe và hiểu rõ chưa'
+            }
+        ];
+        shuffleArray(wishesData);
 
-        wishesData.forEach(function(item, key) {
+        wishesData.forEach(function (item, key) {
             let newItem = $('.wishes-item-container.template').clone();
             $(newItem).find('.wishes-item-avatar img').attr('src', item.image);
             $(newItem).find('.wishes-item-name').text(item.name);
-            $(newItem).find('.wishes-item-content').text(item.wishes);
+            $(newItem).find('.wishes-item-content').html(item.wishes);
 
             $('.wishes-list').append(newItem);
             $(newItem).removeClass('template');
@@ -78,10 +138,10 @@
 
         $.ajax({
             url: 'images.csv',
-            success: function(data) {
+            success: function (data) {
                 let images = $.csv.toArray(data);
                 shuffleArray(images);
-                images.forEach(function(item, key) {
+                images.forEach(function (item, key) {
                     $('.slider-top').append(`
                         <div class="slider-item">
                             <img src="./slides/${item}">
@@ -89,7 +149,7 @@
                     `);
                 });
                 shuffleArray(images);
-                images.forEach(function(item, key) {
+                images.forEach(function (item, key) {
                     $('.slider-bottom').append(`
                         <div class="slider-item">
                             <img src="./slides/${item}">
@@ -112,7 +172,7 @@
                     pauseOnFocus: false,
                 });
 
-                $.each($('.slider-item'), function(key, item) {
+                $.each($('.slider-item'), function (key, item) {
                     $(item).css('animation-delay', (Math.random() * -6) + 's');
                 });
             }
