@@ -123,7 +123,7 @@
             let newItem = $('.wishes-item-container.template').clone();
             $(newItem).find('.wishes-item-avatar img').attr('src', item.image);
             $(newItem).find('.wishes-item-name').text(item.name);
-            $(newItem).find('.wishes-item-content').html(item.wishes);
+            $(newItem).find('.wishes-item-content').html(item.wishes).attr('title', item.wishes.replaceAll('<br>', '\n'));
 
             $('.wishes-list').append(newItem);
             $(newItem).removeClass('template');
