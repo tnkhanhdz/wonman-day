@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <meta name="viewport" content="width=device-width,initial-scale=1">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-csv.js"></script>
+</head>
+<body>
+<div class="banner">
+    <img class="banner-left" src="./images/banner-left.png">
+    <img class="banner-right" src="./images/hearts.png">
+</div>
+
+<div class="slider">
+    <div class="slider-top"></div>
+    <div class="slider-bottom"></div>
+</div>
+
+<div class="wishes">
+    <div class="wishes-title">
+        <img src="./images/wishes-title.png">
+    </div>
+    <div class="wishes-list"></div>
+
+    <div class="wishes-item-container template">
+        <div class="wishes-item">
+            <div class="wishes-item-avatar">
+                <img>
+            </div>
+            <img class="wishes-item-decoration" src="./images/wishes-decoration.png">
+            <div class="wishes-item-name"></div>
+            <div class="wishes-item-content"></div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <img class="footer-left" src="./images/woman.png">
+    <div class="description">
+        Life would not have been as lovely and fortunate without the presence of women. I would like to wish a very
+        <span class="color-orange">Happy Women's Day</span> to one such woman who truly makes my life amazing
+    </div>
+    <img class="footer-right" src="./images/flowers.png">
+</div>
+</body>
+<script>
+    $(document).ready(function() {
+        let wishesData = [];
+        for (let i = 0; i < 20; i++) {
+            wishesData.push({
+                image: 'https://dummyimage.com/600x400/000/fff',
+                name: 'Trần Văn A',
+                wishes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+            })
+        }
+
+        wishesData.forEach(function(item, key) {
+            let newItem = $('.wishes-item-container.template').clone();
+            $(newItem).find('.wishes-item-avatar img').attr('src', item.image);
+            $(newItem).find('.wishes-item-name').text(item.name);
+            $(newItem).find('.wishes-item-content').text(item.wishes);
+
+            $('.wishes-list').append(newItem);
+            $(newItem).removeClass('template');
+        })
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        $.ajax({
+            url: 'images.csv',
+            success: function(data) {
+                let images = $.csv.toArray(data);
+                shuffleArray(images);
+                images.forEach(function(item, key) {
+                    $('.slider-top').append(`
+                        <div class="slider-item">
+                            <img src="./slides/${item}">
+                        </div>
+                    `);
+                });
+                shuffleArray(images);
+                images.forEach(function(item, key) {
+                    $('.slider-bottom').append(`
+                        <div class="slider-item">
+                            <img src="./slides/${item}">
+                        </div>
+                    `);
+                });
+
+                $('.slider-top, .slider-bottom').slick({
+                    speed: 8000,
+                    autoplay: true,
+                    autoplaySpeed: 0,
+                    cssEase: 'linear',
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    variableWidth: true,
+                    dots: false,
+                    prevArrow: false,
+                    nextArrow: false,
+                    pauseOnHover: false,
+                    pauseOnFocus: false,
+                });
+
+                $.each($('.slider-item'), function(key, item) {
+                    $(item).css('animation-delay', (Math.random() * -6) + 's');
+                });
+            }
+        });
+
+        $('.wishes-list').slick({
+            autoplay: true,
+            autoplaySpeed: 2000,
+            variableWidth: true,
+            prevArrow: `<img class="icon-prev" src="./images/prev.png">`,
+            nextArrow: `<img class="icon-next" src="./images/next.png">`,
+        });
+    });
+</script>
+</html>
